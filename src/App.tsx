@@ -7,6 +7,10 @@ const logCount = () => {
   console.log("count: ", count);
 };
 
+const setCount = () => {
+  useCounterStore.setState({ count: 1 });
+};
+
 function App() {
   const count = useCounterStore((state) => state.count);
 
@@ -19,7 +23,8 @@ const OtherComponent = ({ count }: { count: number }) => {
   const decrement = useCounterStore((state) => state.decrement);
 
   useEffect(() => {
-    logCount();
+    // logCount();
+    setCount();
   }, []);
 
   return (
