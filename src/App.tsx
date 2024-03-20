@@ -12,7 +12,10 @@ const setCount = () => {
 };
 
 function App() {
-  const count = useCounterStore((state) => state.count);
+  const count = useCounterStore((state) => state.count); // better like this
+  // will change only when the count changes
+  // OR like this -- > const { count } = useCounterStore((state) => state);
+  // will change everytime smth changes --> not a good practice
 
   return <OtherComponent count={count} />;
 }
